@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./logIn.css">
+</head>
+<body class="max-h-[926px] max-w-[428px]">
+    <header class="flex">
+        <img src="../../../assets/svg/back-arrow.svg" alt="" class=" px-[24px] my-[12px] cursor-pointer " id="backToGetStart" onclick="backToGetStart()">
+    </header>
+    <main class="flex flex-col items-center h-[888px] relative">
+        <div class="mt-[76px]">
+            <img src="../../../assets/svg/logo.svg" alt="" class="">
+        </div>
+        <form action="" class="mt-[118px] flex flex-col gap-[21px] text-center relative">
+            <h2 class="text-[32px] font-medium ">Login to Your Account</h2>
+           <div class="flex gap-1 bg-[#FAFAFA] rounded-[4px] w-[380px] py-[8px] px-[12px]" id="emailDiv"> 
+            <img src="../../../assets/svg/email.svg" alt="">
+            <input type="email" placeholder="Email" class="bg-opacity-0 bg-black w-full outline-none" id="email">
+        </div>
+        <div class="flex gap-1 bg-[#FAFAFA] rounded-[4px] w-[380px] py-[8px] px-[12px]" id="passwordDiv">
+            <img src="../../../assets/svg/password.svg" alt="">
+            <input type="password" placeholder="Password" class="bg-opacity-0 bg-black w-full outline-none" id="pass">
+            <img src="../../../assets/svg/eye.svg" alt="" id="passEye">
+        </div>
+        <div class="flex gap-2 items-center justify-center">
+            <input type="checkbox" id="Remember">
+            <label for="Remember">Remember me</label>
+        </div>
+
+        </form>
+        <div class="w-full absolute bottom-[32px] left-[24px]">
+            <button class="bg-[#212529] bg-opacity-50 w-[380px] h-[47px] rounded-[30px] text-white" id="singInBtn" disabled>Sing In</button>
+        </div>
+    </main>
+    <script src="./log-in.js"></script>
+</body>
+</html>

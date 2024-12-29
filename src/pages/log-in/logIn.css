@@ -1,0 +1,14 @@
+#Remember{
+    accent-color: #000000;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* حذف اسکرول افقی */
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
