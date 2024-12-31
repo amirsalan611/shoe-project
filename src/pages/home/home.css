@@ -1,0 +1,7 @@
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* مخفی کردن نوار اسکرول در کروم و سافاری */
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* مخفی کردن نوار اسکرول در اینترنت اکسپلورر */
+    scrollbar-width: none; /* مخفی کردن نوار اسکرول در فایرفاکس */
+  }
