@@ -28,6 +28,6 @@ function singInColor() {
 
 emailInput.addEventListener("input", singInColor);
 passInput.addEventListener("input", singInColor);
-singInBtn.addEventListener('click',()=>{
-  window.location.href="../home/home.html"
-})
+singInBtn.addEventListener("click", () => {
+  window.location.href = "../home/home.html";
+});

@@ -1,4 +1,3 @@
-
 var swiper = new Swiper(".mySwiper", {
   loop: false,
   centeredSlides: true,
@@ -6,19 +5,9 @@ var swiper = new Swiper(".mySwiper", {
     delay: 3000,
     disableOnInteraction: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
   on: {
     slideChange: function () {
-
       if (swiper.isEnd) {
-
         swiper.autoplay.stop();
 
         setTimeout(() => {
