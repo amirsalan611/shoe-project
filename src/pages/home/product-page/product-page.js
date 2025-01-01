@@ -1,37 +1,12 @@
-// import { quantityValueHandel } from "./quantity.js";
-// quantityValueHandel()
-
-const quantityNegative = document.getElementById("quantityNegative")
-const quantityInput = document.getElementById("quantityInput")
-const quantityPlus = document.getElementById("quantityPlus")
-
-let quantity = 0
-
+import { quantityValueHandel } from "./quantity.js";
 quantityValueHandel()
-function quantityValueHandel() {
-    quantityPlus.addEventListener('click',()=>{
-        quantity++
-    updateQuantityInput();
-        
-    })
-    quantityNegative.addEventListener('click',()=>{
-        if (quantity>0) {
-        quantity--
-    updateQuantityInput();
 
-    }})
-}
-
-function updateQuantityInput() {
-    quantityInput.value = quantity;
-}
-// add To Cart Button hander
+// add To Cart Button handler
 const addToCartButton = document.getElementById("addToCartButton")
 
 addToCartButton.addEventListener('click',()=>{
     
 })
-
 
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 2,

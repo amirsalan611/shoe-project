@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header
+      class="flex flex-col py-3 px-6 fixed top-0 left-0 w-full bg-white z-10"
+    >
+      <div class="flex justify-between w-full">
+        <div class="flex items-center justify-items-center">
+          <img
+            src="../../../assets/svg/logo.svg"
+            alt="back button"
+            class="w-4"
+          />
+          <h3 class="mx-5 pb-1 text-[20px] font-semibold">My Orders</h3>
+        </div>
+        <div class="flex items-center gap-3 justify-items-center">
+          <img src="../../../assets/svg/search.svg" alt="search" class="w-6" />
+          <img
+            src="../../../assets/svg/More Circle.svg"
+            alt="search"
+            class="w-6"
+          />
+        </div>
+      </div>
+      <div class="pt-3 flex items-center">
+        <label class="cursor-pointer w-full">
+          <input type="radio" name="filter" class="hidden peer" checked />
+          <div
+            class="peer-checked:border-b-black peer-checked:text-black text-center border-b-[2px] border-b-gray-400 text-gray-400 pb-4"
+          >
+            <p class="font-medium">Active</p>
+          </div>
+        </label>
+        <label class="cursor-pointer w-full">
+          <input type="radio" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:border-b-black peer-checked:text-black text-center border-b-[2px] border-b-gray-400 text-gray-400 pb-4"
+          >
+            <p class="font-medium">Completed</p>
+          </div>
+        </label>
+      </div>
+    </header>
+
+    <!-- dont have order -->
+    <!-- <div class="pt-[250px]">
+        <div class="flex flex-col justify-center items-center">
+            <img src="../../../assets/images/Doc.png" alt="" class="w-[60%]">
+            <h3 class="font-medium text-[17px]">You don't have an order yet</h3>
+            <p class="text-[14px]">You don't have active orders at this time</p>
+        </div>
+     </div> -->
+    <!-- --------- -->
+     
+    <!-- active orders  -->
+    <!-- <div class="flex flex-col gap-5 p-5 mt-[110px]">
+      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+          <img
+            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+            alt=""
+            class="min-w-[130px]"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-1">
+          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+
+          <div class="flex justify-cente items-center gap-2">
+            <div class="bg-black rounded-full w-4 h-4"></div>
+            <p class="text-gray-400 text-[13px]">Black</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Size = 42</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Qty = 1</p>
+          </div>
+
+          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+            <h3 class="text-[10px]">In Delivery</h3>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">$105</p>
+            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                <h3 class="text-[12px]">Track Order</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+          <img
+            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+            alt=""
+            class="min-w-[130px]"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-1">
+          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+
+          <div class="flex justify-cente items-center gap-2">
+            <div class="bg-black rounded-full w-4 h-4"></div>
+            <p class="text-gray-400 text-[13px]">Black</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Size = 42</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Qty = 1</p>
+          </div>
+
+          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+            <h3 class="text-[10px]">In Delivery</h3>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">$105</p>
+            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                <h3 class="text-[12px]">Track Order</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+          <img
+            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+            alt=""
+            class="min-w-[130px]"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-1">
+          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+
+          <div class="flex justify-cente items-center gap-2">
+            <div class="bg-black rounded-full w-4 h-4"></div>
+            <p class="text-gray-400 text-[13px]">Black</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Size = 42</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Qty = 1</p>
+          </div>
+
+          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+            <h3 class="text-[10px]">In Delivery</h3>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">$105</p>
+            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                <h3 class="text-[12px]">Track Order</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+          <img
+            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+            alt=""
+            class="min-w-[130px]"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-1">
+          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+
+          <div class="flex justify-cente items-center gap-2">
+            <div class="bg-black rounded-full w-4 h-4"></div>
+            <p class="text-gray-400 text-[13px]">Black</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Size = 42</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Qty = 1</p>
+          </div>
+
+          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+            <h3 class="text-[10px]">In Delivery</h3>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">$105</p>
+            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                <h3 class="text-[12px]">Track Order</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+          <img
+            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+            alt=""
+            class="min-w-[130px]"
+          />
+        </div>
+        <div class="flex flex-col w-full gap-1">
+          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+
+          <div class="flex justify-cente items-center gap-2">
+            <div class="bg-black rounded-full w-4 h-4"></div>
+            <p class="text-gray-400 text-[13px]">Black</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Size = 42</p>
+            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+            <p class="text-gray-400 text-[13px]">Qty = 1</p>
+          </div>
+
+          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+            <h3 class="text-[10px]">In Delivery</h3>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-[20px] font-medium">$105</p>
+            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                <h3 class="text-[12px]">Track Order</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- completed orders -->
+    <div class="flex flex-col gap-5 p-5 mt-[110px]">
+        <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[13px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Size = 42</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Qty = 1</p>
+              </div>
+    
+              <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+                <h3 class="text-[10px]">Completed</h3>
+              </div>
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                    <h3 class="text-[12px]">Leave Review</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[13px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Size = 42</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Qty = 1</p>
+              </div>
+    
+              <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+                <h3 class="text-[10px]">Completed</h3>
+              </div>
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                    <h3 class="text-[12px]">Leave Review</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[13px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Size = 42</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Qty = 1</p>
+              </div>
+    
+              <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+                <h3 class="text-[10px]">Completed</h3>
+              </div>
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                    <h3 class="text-[12px]">Leave Review</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[13px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Size = 42</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Qty = 1</p>
+              </div>
+    
+              <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+                <h3 class="text-[10px]">Completed</h3>
+              </div>
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                    <h3 class="text-[12px]">Leave Review</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[13px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Size = 42</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[13px]">Qty = 1</p>
+              </div>
+    
+              <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
+                <h3 class="text-[10px]">Completed</h3>
+              </div>
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
+                    <h3 class="text-[12px]">Leave Review</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <footer
+      class="flex justify-between gap-10 px-12 pt-3 pb-4 bg-white w-full fixed bottom-0 left-0"
+    >
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img
+          src="../../../assets/svg/home-96 (2).png"
+          alt="home"
+          class="w-[26px] h-[26px]"
+        />
+        <h3 class="text-[10px]">Home</h3>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <img src="../../../assets/svg/cart-icon.svg" alt="cart" />
+        <h3 class="text-[10px]">Cart</h3>
+      </div>
+      <div
+        class="flex flex-col mt-[3px] items-center justify-center justify-items-center"
+      >
+        <img src="../../../assets/svg/order.png" alt="order" />
+        <h3 class="text-[10px]">Order</h3>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img src="../../../assets/svg/wallet-icon.svg" alt="order" />
+        <h3 class="text-[10px]">Wallet</h3>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img
+          src="../../../assets/svg/profile-icon.svg"
+          alt="order"
+          class="w-[24px] h-[24px]"
+        />
+        <h3 class="text-[10px]">Profile</h3>
+      </div>
+    </footer>
+  </body>
+</html>
