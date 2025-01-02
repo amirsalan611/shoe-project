@@ -26,10 +26,79 @@
       </div>
     </header>
 
+    <!-- product carts  -->
     <div class="flex flex-col gap-5 p-5 mt-[45px] mb-[76px]">
 
 
         <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col justify-between w-full gap-1">
+                <div class="flex items-center justify-cente justify-between">
+              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
+              <img src="../../../assets/svg/trash.svg" alt="" class="w-[30px] p-1">
+                </div>
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[12px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[12px]">Size = 42</p>
+              </div>
+    
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="flex items-center ml-5 gap-3">
+                    <div class="flex bg-[#ececed] justify-between w-[90px] rounded-[30px]">
+                        <button id="quantityNegative" class="rounded-[30px] font-medium text-[17px] py-1 pl-4">-</button>
+                        <input id="quantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center outline-none text-[17px]" value="0">
+                        <button id="quantityPlus" class="rounded-[30px] font-medium text-[17px] py-1 pr-4">+</button>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+              <img
+                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
+                alt=""
+                class="min-w-[130px]"
+              />
+            </div>
+            <div class="flex flex-col justify-between w-full gap-1">
+                <div class="flex items-center justify-cente justify-between">
+              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
+              <img src="../../../assets/svg/trash.svg" alt="" class="w-[30px] p-1">
+                </div>
+              <div class="flex justify-cente items-center gap-2">
+                <div class="bg-black rounded-full w-4 h-4"></div>
+                <p class="text-gray-400 text-[12px]">Black</p>
+                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
+                <p class="text-gray-400 text-[12px]">Size = 42</p>
+              </div>
+    
+    
+              <div class="flex items-center justify-between">
+                <p class="text-[20px] font-medium">$105</p>
+                <div class="flex items-center ml-5 gap-3">
+                    <div class="flex bg-[#ececed] justify-between w-[90px] rounded-[30px]">
+                        <button id="quantityNegative" class="rounded-[30px] font-medium text-[17px] py-1 pl-4">-</button>
+                        <input id="quantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center outline-none text-[17px]" value="0">
+                        <button id="quantityPlus" class="rounded-[30px] font-medium text-[17px] py-1 pr-4">+</button>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
             <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
               <img
                 src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
@@ -249,7 +318,7 @@
     </div> -->
 
     <!-- remove cart  -->
-<div class="absolute top-0 right-0 left-0 bottom-0 z-20 h-full w-full bg-opacity-50 bg-black cursor-pointer"></div>
+<div class="fixed top-0 left-0 z-20 h-full w-full bg-opacity-50 bg-black cursor-pointer"></div>
 
 
     <div class="z-30 fixed bottom-0 left-0 right-0 bg-white w-full rounded-t-[35px] p-5 pb-2">
@@ -301,9 +370,9 @@
                 <h3>Yes,Remove</h3>
             </div>
         </div>
+        
 
     </div>
-    
 
     <footer
       class="flex justify-between gap-10 px-12 pt-3 pb-4 bg-white w-full fixed bottom-0 left-0 z-20"
