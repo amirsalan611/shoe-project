@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../public/public.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="relative">
+    <header class="flex flex-col py-3 fixed top-0 left-0 pt-5 w-full bg-white z-10">
+        <div class="flex items-center justify-between w-full px-6">
+          <div class="flex items-center justify-items-center">
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+            <h3 class="mx-6 pb-1 text-[22px] font-semibold">Payment Methods</h3>
+          </div>
+          <div>
+            <img src="../../../../assets/svg/add-border.svg" alt="" class="w-[25px]">
+          </div>
+        </div>
+      </header>
+
+      <div class="mt-[80px] px-5">
+        <h3 class="text-[14px] text-gray-500 font-medium">Select the payment method you want to use.</h3>
+        <div class="py-5">
+
+            <label class="my-5 w-full rounded-[20px] bg-white shadow-xl flex justify-between items-center p-5" for="myWallet">
+                <div class=" flex gap-2 items-center">
+                    <img src="../../../../assets/svg/wallet-svgrepo-com.svg" alt="" class="w-[35px]">
+                    <h3 class="text-[17px]">My Wallet</h3>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <h3>$9.379</h3>
+                    <input type="radio" name="payment" id="myWallet" class="changeColor">
+                </div>
+            </label>
+
+            <label class="my-5 w-full rounded-[20px] bg-white shadow-xl flex justify-between items-center p-5" for="paypal">
+                <div class=" flex gap-2 items-center">
+                    <img src="../../../../assets/svg/paypal-svgrepo-com.svg" alt="" class="w-[35px]">
+                    <h3 class="text-[17px]">payPal</h3>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <input type="radio" name="payment" id="paypal" class="changeColor">
+                </div>
+            </label>
+
+            <label class="my-5 w-full rounded-[20px] bg-white shadow-xl flex justify-between items-center p-5" for="goglePlay">
+                <div class=" flex gap-2 items-center">
+                    <img src="../../../../assets/svg/google-color-svgrepo-com.svg" alt="" class="w-[30px]">
+                    <h3 class="text-[17px]">Google Play</h3>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <input type="radio" name="payment" id="goglePlay" class="changeColor">
+                </div>
+            </label>
+
+            <label class="my-5 w-full rounded-[20px] bg-white shadow-xl flex justify-between items-center p-5" for="apple">
+                <div class=" flex gap-2 items-center">
+                    <img src="../../../../assets/svg/apple-173-svgrepo-com.svg" alt="" class="w-[30px]">
+                    <h3 class="text-[17px]">Apple Pay</h3>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <input type="radio" name="payment" id="apple" class="changeColor">
+                </div>
+            </label>
+
+            <label class="my-5 w-full rounded-[20px] bg-white shadow-xl flex justify-between items-center p-5" for="masterCard">
+                <div class=" flex gap-2 items-center">
+                    <img src="../../../../assets/svg/mastercard-svgrepo-com.svg" alt="" class="w-[30px]">
+                    <h3 class="text-[17px]">.... .... .... 4679</h3>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <input type="radio" name="payment" id="masterCard" class="changeColor">
+                </div>
+            </label>
+
+            <div class="fixed bottom-0 p-5 left-0 right-0 bg-white border-t-[1px] shadow-inner rounded-t-[35px]">
+                <div class="bg-black p-5 w-full text-white rounded-full text-center">
+                    <h3>Apply</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Successfull modal  -->
+      <div class="fixed left-0 top-0 right-0 bottom-0 h-full z-10 bg-black bg-opacity-70"></div>
+      <div class="absolute left-0 top-0 z-20 flex w-full h-screen">
+        <div class="w-full flex flex-col gap-3 justify-center items-center p-5 bg-white mx-10 h-[508px] mt-[120px] rounded-[50px]" >
+          <img src="../../../../assets/images/payment-confirm.jpg" alt="">
+          <h3 class="text-[25px] font-medium">Order Successfull!</h3>
+          <p>You have Successfully made order.</p>
+          <div class="flex flex-col pt-3 gap-3 w-full">
+            <div class="bg-black p-5 text-white rounded-full w-full text-center">
+                <h3>View Order</h3>
+            </div>
+            <div class="bg-gray-200 p-5 text-black rounded-full w-full text-center">
+                <h3>View E-Receipt</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
