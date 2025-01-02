@@ -1,4 +1,4 @@
-import { quantityValueHandel } from "./quantity.js";
+import { quantityValueHandel } from "../../../../public/quantity.js";
 quantityValueHandel()
 
 // add To Cart Button handler
