@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../public/public.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="flex flex-col py-3 fixed top-0 left-0 pt-5 w-full bg-white z-10">
+        <div class="flex justify-between w-full px-6">
+          <div class="flex items-center justify-items-center">
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+            <h3 class="mx-6 pb-1 text-[22px] font-semibold">Choose Shipping</h3>
+          </div>
+        </div>
+      </header>
+
+            <!-- Shipping address  -->
+            <div class="mx-5 mt-[95px]">
+
+                <!-- adress card -->
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="Economy">
+                    <img src="../../../../assets/svg/delivered-box.svg" alt="" class="w-[45px]">
+                    <div class="flex flex-col gap-1 justify-center">
+                        <div class="flex items-center gap-2">
+                        <h3 class="text-[18px] font-medium">Economy</h3>
+                        </div>
+                        <p class="text-[14px] text-gray-500">Estimated Arrival, Dec 20-23</p>
+                    </div>
+                    <div class="flex gap-3 ml-auto">
+                        <div class="text-[20px] font-medium pl-4 ">
+                            <h3>$10</h3>
+                        </div>
+                        <div class="flex items-center ml-auto w-[20px] ">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Economy">
+                        </div>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="regular">
+                    <img src="../../../../assets/svg/delivery-package.svg" alt="" class="w-[45px]">
+                    <div class="flex flex-col gap-1 justify-center">
+                        <div class="flex items-center gap-2">
+                        <h3 class="text-[18px] font-medium">Regular</h3>
+                        </div>
+                        <p class="text-[14px] text-gray-500">Estimated Arrival, Dec 20-23</p>
+                    </div>
+                    <div class="flex gap-3 ml-auto">
+                        <div class="text-[20px] font-medium pl-4 ">
+                            <h3>$15</h3>
+                        </div>
+                        <div class="flex items-center ml-auto w-[20px] ">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="regular">
+                        </div>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="cargo">
+                    <img src="../../../../assets/svg/cargo.svg" alt="" class="w-[50px]">
+                    <div class="flex flex-col gap-1 justify-center">
+                        <div class="flex items-center gap-2">
+                        <h3 class="text-[18px] font-medium">Cargo</h3>
+                        </div>
+                        <p class="text-[14px] text-gray-500">Estimated Arrival, Dec 20-23</p>
+                    </div>
+                    <div class="flex gap-3 ml-auto">
+                        <div class="text-[20px] font-medium pl-4 ">
+                            <h3>$20</h3>
+                        </div>
+                        <div class="flex items-center ml-auto w-[20px] ">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="cargo">
+                        </div>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="Express">
+                    <img src="../../../../assets/svg/express.svg" alt="" class="w-[50px]">
+                    <div class="flex flex-col gap-1 justify-center">
+                        <div class="flex items-center gap-2">
+                        <h3 class="text-[18px] font-medium">Express</h3>
+                        </div>
+                        <p class="text-[14px] text-gray-500">Estimated Arrival, Dec 20-23</p>
+                    </div>
+                    <div class="flex gap-3 ml-auto">
+                        <div class="text-[20px] font-medium pl-4 ">
+                            <h3>$30</h3>
+                        </div>
+                        <div class="flex items-center ml-auto w-[20px] ">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Express">
+                        </div>
+                    </div>
+                </label>
+
+              </div>
+              
+</body>
+</html>
