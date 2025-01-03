@@ -1,3 +1,5 @@
+import { loginUser } from "./user-login.js";
+
 const backBtn = document.getElementById("backToGetStart");
 const emailInput = document.getElementById("email");
 const passInput = document.getElementById("pass");
@@ -28,6 +30,9 @@ function singInColor() {
 
 emailInput.addEventListener("input", singInColor);
 passInput.addEventListener("input", singInColor);
-singInBtn.addEventListener("click", () => {
-  window.location.href = "../home/home.html";
+singInBtn.addEventListener("click", async () => {
+  const success = await loginUser(emailInput.value, passInput.value);
+  if (success) {
+    window.location.href = "../home/home.html";
+  }
 });
