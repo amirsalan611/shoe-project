@@ -11,9 +11,11 @@ const backArrow = document.getElementById("backArrow");
 const loading = document.getElementById("loading");
 const addToCartButton = document.getElementById("addToCartButton");
 const quantityInput = document.getElementById("quantityInput");
+const succifullyAdd = document.getElementById("succifullyAdd")
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("productId");
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('productId');
+
 
 let product_Id = ""
 let productImageURL = ""
@@ -22,6 +24,7 @@ let SinglePrice = ""
 getProduct(productId);
 async function getProduct(Id) {
   product_Id = Id
+  console.log(product_Id);
   console.log(Id);
   loading.classList.remove("hidden");
   try {
@@ -157,7 +160,7 @@ function addToCart() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "id" : product_Id,
+        "product_id" : product_Id,
         "color" : product_color,
         "size" : product_size,
         "quantity" : product_quantity ,
@@ -167,6 +170,12 @@ function addToCart() {
       })
     }).then((response)=>{
       console.log("sended to carts");
+      succifullyAdd.classList.remove("hidden")
+
+      setTimeout(() => {
+        succifullyAdd.classList.add("hidden")
+      }, 3000);
+
       if (!response.ok) {
         if (response.status === 403) {
           window.location.href = "../../log-in/log-in.html"

@@ -6,9 +6,7 @@ const removeProductModal = document.getElementById("removeProductModal");
 const backdrop = document.getElementById("backdrop");
 const loading = document.getElementById("loading");
 
-
-quantityValueHandel();
-renderCarts();
+let totalPrice = 0
 
 async function getCarts() {
   loading.classList.remove("hidden");
@@ -35,16 +33,23 @@ async function getCarts() {
   }
 }
 
-let totalPrice = 0
 
+renderCarts();
 async function renderCarts() {
+    totalPrice = 0
     cartsSection.innerHTML = "";
   const carts = await getCarts();
+  if (carts.length===0) {
+    cartsSection.innerHTML = `<div class="text-center m-[50px]">
+        <img src="../../../assets/images/Doc.png" alt="" class=" w-[300px]">
+        <h3 class="text-[20px] font-medium">No Cart Has Been Added yet</h3>
+      </div>`
+  }
   carts.forEach((product) => {
     totalPrice += product.productPrice * product.quantity
     console.log(totalPrice);
-    cartsSection.innerHTML += `<div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
+    cartsSection.innerHTML += `<div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px] " >
+            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]" onclick="productPage(${product.product_id})">
               <img
                 src="${product.imageURL}"
                 alt=""
@@ -74,11 +79,11 @@ async function renderCarts() {
                 }</p>
                 <div class="flex items-center ml-5 gap-3">
                     <div class="flex bg-[#ececed] justify-between w-[90px] rounded-[30px]">
-                        <button id="quantityNegative" class="rounded-[30px] font-medium text-[17px] py-1 pl-4">-</button>
-                        <input id="cartQuantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center outline-none text-[17px]" value="${
+                        <button data-id="${product.id}" class="quantityNegative rounded-[30px] font-medium text-[17px] py-1 pl-4">-</button>
+                        <input type="number" id="quantityInput_${product.id}" class=" quantityInput bg-black w-full bg-opacity-0 text-center outline-none text-[17px]" value="${
                           product.quantity
                         }">
-                        <button id="quantityPlus" class="rounded-[30px] font-medium text-[17px] py-1 pr-4">+</button>
+                        <button data-id="${product.id}" class=" quantityPlus rounded-[30px] font-medium text-[17px] py-1 pr-4">+</button>
                     </div>
                  </div>
               </div>
@@ -87,7 +92,82 @@ async function renderCarts() {
         });
         loading.classList.add("hidden");
         checkoutHandler()
+        quantityValueHandel()
+        productQuantityUpdate()
     }
+
+    function productQuantityUpdate() {
+      const plusBTNs = document.querySelectorAll(".quantityPlus");
+      const negativeBTNs = document.querySelectorAll(".quantityNegative");
+    
+      plusBTNs.forEach((item) => {
+        item.addEventListener("click", async () => {
+          const productId = item.dataset.id;
+          const inputField = document.getElementById(`quantityInput_${productId}`);
+          let quantity = parseInt(inputField.value);
+    
+          try {
+            const response = await fetch(`${baseURL}/api/records/carts/${productId}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                api_key: API_KEY,
+                Authorization: `Bearer ${accessToken()}`,
+              },
+              body: JSON.stringify({ quantity }),
+            });
+    
+            if (!response.ok) {
+              throw new Error("Failed to update quantity");
+            }
+    
+            inputField.value = quantity;
+    
+            renderCarts();
+            return
+          } catch (error) {
+            console.error(`Error updating quantity: ${error.message}`);
+          }
+        });
+      });
+    
+      negativeBTNs.forEach((item) => {
+        item.addEventListener("click", async () => {
+          const productId = item.dataset.id;
+          const inputField = document.getElementById(`quantityInput_${productId}`);
+          let quantity = parseInt(inputField.value);
+    
+          try {
+            const response = await fetch(`${baseURL}/api/records/carts/${productId}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                api_key: API_KEY,
+                Authorization: `Bearer ${accessToken()}`,
+              },
+              body: JSON.stringify({ quantity }),
+            });
+    
+            if (!response.ok) {
+              throw new Error("Failed to update quantity");
+            }
+    
+            inputField.value = quantity;
+
+            renderCarts();
+            return
+          } catch (error) {
+            console.error(`Error updating quantity: ${error.message}`);
+          }
+        });
+      });
+    }
+    
+
+function productPage(productId) {
+  window.location.href = `../home/product-page/product-page.html?productId=${encodeURIComponent(productId)}`;
+}
+window.productPage = productPage;
     
 function checkoutHandler() {
     document.getElementById("checkout").innerHTML = `<div class="flex flex-col p-5">

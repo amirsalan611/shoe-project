@@ -26,6 +26,10 @@
     </header>
     <main> 
 
+      <div class="fixed top-[50px] rounded-full left-0 right-0 mx-10 p-3 bg-green-400 text-white text-center z-50 hidden" id="succifullyAdd">
+        <h3>Product succifully added!</h3>
+      </div>
+
       <div class=" fixed top-0 left-0 z-20 bg-white w-full h-full pt-[400px] hidden"  id="loading">
         <div class="dot-spinner col-span-2 mx-auto my-10">
           <div class="dot-spinner__dot"></div>
@@ -91,9 +95,9 @@
          <div class="flex items-center ml-5 gap-3">
             <h3 class="font-medium text-[17px]">Quantity</h3>
             <div class="flex bg-[#ececed] justify-between w-[120px] rounded-[30px]">
-                <button id="quantityNegative" class="rounded-[30px] font-medium text-[22px] py-2 pl-4">-</button>
-                <input id="quantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center text-[17px]" value="1">
-                <button id="quantityPlus" class="rounded-[30px] font-medium text-[22px] py-2 pr-4">+</button>
+                <button id="quantityNegative" class=" quantityNegative rounded-[30px] font-medium text-[22px] py-2 pl-4">-</button>
+                <input id="quantityInput" type="number" class=" quantityInput bg-black w-full bg-opacity-0 text-center text-[17px]" value="1">
+                <button id="quantityPlus" class=" quantityPlus rounded-[30px] font-medium text-[22px] py-2 pr-4">+</button>
             </div>
          </div>
         <div class="border-b-[1px] pb-4 mx-5"></div>

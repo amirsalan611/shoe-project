@@ -1,25 +1,31 @@
-const quantityNegative = document.getElementById("quantityNegative")
-const quantityInput = document.getElementById("quantityInput")
-const cartQuantityInput = document.getElementById("quantityInput")
-const quantityPlus = document.getElementById("quantityPlus")
-
-let quantity = 0
-
 export function quantityValueHandel() {
-    quantityPlus.addEventListener('click',()=>{
-        quantity++
-    updateQuantityInput();
-        
-    })
-    quantityNegative.addEventListener('click',()=>{
-        if (quantity>1) {
-        quantity--
-    updateQuantityInput();
 
-    }})
+    const quantityPluses = document.querySelectorAll('.quantityPlus');
+    const quantityMinuses = document.querySelectorAll('.quantityNegative');
+    const quantityInputs = document.querySelectorAll('.quantityInput');
+
+    quantityPluses.forEach((quantityPlus, index) => {
+        quantityPlus.addEventListener('click', () => {
+            let quantity = parseInt(quantityInputs[index].value) || 1;
+            quantity++;
+            quantityInputs[index].value = quantity;
+            updateCartQuantityInput(index, quantity);
+        });
+    });
+
+    quantityMinuses.forEach((quantityMinus, index) => {
+        quantityMinus.addEventListener('click', () => {
+            let quantity = parseInt(quantityInputs[index].value) || 1;
+            if (quantity > 1) {
+                quantity--;
+                quantityInputs[index].value = quantity;
+                updateCartQuantityInput(index, quantity);
+            }
+        });
+    });
 }
 
-function updateQuantityInput() {
-    quantityInput.value = quantity;
-    cartQuantityInput.value = quantity
+function updateCartQuantityInput(index, quantity) {
+    const cartQuantityInputs = document.querySelectorAll('.cartQuantityInput');
+    cartQuantityInputs[index].value = quantity;
 }
