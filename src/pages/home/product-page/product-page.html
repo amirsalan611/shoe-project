@@ -8,45 +8,41 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./product-page.css" />
-    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./product-page.css"/>
+    <link rel="stylesheet" href="./home.css"/>
+    <link rel="stylesheet" href="../../../../public/public.css">
+
 
     <title>Document</title>
   </head>
   <body>
-    <header class="flex bg- w-full fixed top-0 left-0 z-10">
+    <header class="flex bg- w-full fixed top-0 left-0 z-30">
       <div
         class="self start py-5 px-5 cursor-pointer flex items-center justify-center justify-items-center"
+        id="backArrow"
       >
         <img src="../../../../assets/svg/back-arrow.svg" alt="" />
       </div>
     </header>
     <main> 
+
+      <div class=" fixed top-0 left-0 z-20 bg-white w-full h-full pt-[400px] hidden"  id="loading">
+        <div class="dot-spinner col-span-2 mx-auto my-10">
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+      </div>
+      </div>
         <!-- product images -->
       <div>
         <!-- product images swiper -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <!-- product image  -->
-            <div class="swiper-slide">
-              <img
-                src="../../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-              />
-            </div>
-            <!-- product image  -->
-            <div class="swiper-slide">
-              <img
-                src="../../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-              />
-            </div>
-            <!-- product image  -->
-            <div class="swiper-slide">
-              <img
-                src="../../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-              />
+        <div class="swiper mySwiper min-h-[428px]">
+          <div class="swiper-wrapper" id="images">
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -56,8 +52,8 @@
       <!-- section 2 -->
       <div class="flex flex-col w-full">
         <div class="flex items-center justify-center justify-between w-full my-1 py-1 px-5">
-            <h3 class="text-[35px] font-medium">Runing Sportwear</h3>
-            <img src="../../../../assets/svg/heart.svg" alt="heart" class="mt-1">
+            <h3 class="text-[28px] font-medium  " id="productName"></h3>
+            <img src="../../../../assets/svg/heart.svg" alt="heart" class="m-2">
         </div>
         <div class="flex items-center gap-2 h-[35px]">
             <div class="p-2 ml-5 w-20 flex items-center justify-center bg-[#ececed] rounded-[10px]">
@@ -71,69 +67,22 @@
       <!-- description -->
        <div class="px-5 py-5">
         <h3 class="font-medium text-[17px]">description</h3>
-        <p class="text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, totam. Reiciendis sequi velit <strong>view more..</strong> </p>
+        <p class="text-[14px]" id="description"></p>
        </div>
        <!-- size and color -->
         <div class="flex gap-10 pb-5 pl-5">
             <!-- size -->
             <div class="flex flex-col">
                 <h3 class="font-medium text-[17px] pb-2" >Size</h3>
-                <div class="flex gap-2">
-                  <label class="cursor-pointer">
-                    <input type="radio" name="filter" class="hidden peer">
-                  <div class="peer-checked:bg-[#343A40] peer-checked:text-white peer-checked:border-[#343A40] border-2 border-[#343A40] flex items-center justify-center border border-[#717171] rounded-full w-[40px] h-[40px] py-2 px-2">
-                    <p class="text-center">40</p>
-                </div>
-            </label>
-                <label class="cursor-pointer">
-                  <input type="radio" name="filter" class="hidden peer">
-                <div class="peer-checked:bg-[#343A40] peer-checked:text-white peer-checked:border-[#343A40] border-2 border-[#343A40] flex items-center justify-center border border-[#717171] rounded-full w-[40px] h-[40px] py-2 px-2">
-                  <p class="text-center">41</p>
-              </div>
-          </label>
-            <label class="cursor-pointer">
-                <input type="radio" name="filter" class="hidden peer">
-              <div class="peer-checked:bg-[#343A40] peer-checked:text-white peer-checked:border-[#343A40] border-2 border-[#343A40] flex items-center justify-center border border-[#717171] rounded-full w-[40px] h-[40px] py-2 px-2">
-                <p class="text-center">42</p>
-            </div>
-        </label>
+                <div class="flex gap-2" id="size">
                 </div>
             </div>
             <!-- Color -->
             <div class="flex flex-col min-w-[150px]">
                 <h3 class="font-medium text-[17px] pb-2" >Color</h3>
                 <div class="flex flex-col overflow-x-auto scrollbar-hide">
-                    <div class="flex gap-2 min-w-[250px]">
-                          <label class="cursor-pointer border border-gray-200 rounded-full w-[43px] h-[43px]">
-                            <input type="radio" name="color" class="hidden peer">
-                          <div class="flex items-center hidden peer-checked:block peer-checked:bg-black peer-checked:bg-opacity-30 justify-center rounded-full  py-2 px-2">
-                                <img src="../../../../assets/images/select.png" ></img>
-                        </div>
-                    </label>
-                    <label class="cursor-pointer border border-gray-200 bg-[#607d8a] rounded-full w-[43px] h-[43px]">
-                        <input type="radio" name="color" class="hidden peer">
-                      <div class="flex items-center hidden peer-checked:block peer-checked:bg-black peer-checked:bg-opacity-30 justify-center rounded-full  py-2 px-2">
-                            <img src="../../../../assets/images/select.png" ></img>
-                    </div>
-                </label>
-                <label class="cursor-pointer border border-gray-200 bg-[#9d28ac] rounded-full w-[43px] h-[43px]">
-                    <input type="radio" name="color" class="hidden peer">
-                  <div class="flex items-center hidden peer-checked:block peer-checked:bg-black peer-checked:bg-opacity-30 justify-center rounded-full  py-2 px-2">
-                        <img src="../../../../assets/images/select.png" ></img>
-                </div>
-            </label>
-            <label class="cursor-pointer border border-gray-200 bg-[#7a5448] rounded-full w-[43px] h-[43px]">
-                <input type="radio" name="color" class="hidden peer">
-              <div class="flex items-center hidden peer-checked:block peer-checked:bg-black peer-checked:bg-opacity-30 justify-center rounded-full  py-2 px-2">
-                    <img src="../../../../assets/images/select.png" ></img>
-            </div>
-            </label>
-            <label class="cursor-pointer border border-gray-200 bg-[#1a96f0] rounded-full w-[43px] h-[43px]">
-                <input type="radio" name="color" class="hidden peer">
-             <div class="flex items-center hidden peer-checked:block peer-checked:bg-black peer-checked:bg-opacity-30 justify-center rounded-full  py-2 px-2">
-                  <img src="../../../../assets/images/select.png" ></img>
-                </div>
-                </label>
+                    <div class="flex gap-2 min-w-[250px]" id="color">
+
                     </div>
                 </div>
             </div>
@@ -143,7 +92,7 @@
             <h3 class="font-medium text-[17px]">Quantity</h3>
             <div class="flex bg-[#ececed] justify-between w-[120px] rounded-[30px]">
                 <button id="quantityNegative" class="rounded-[30px] font-medium text-[22px] py-2 pl-4">-</button>
-                <input id="quantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center text-[17px]" value="0">
+                <input id="quantityInput" type="number" class="bg-black w-full bg-opacity-0 text-center text-[17px]" value="1">
                 <button id="quantityPlus" class="rounded-[30px] font-medium text-[22px] py-2 pr-4">+</button>
             </div>
          </div>
@@ -153,7 +102,7 @@
             <!-- Total price -->
             <div>
                 <h3 class="text-[12px] text-gray-400">Total price</h3>
-                <h3 class="text-[25px]">$240.00</h3>
+                <h3 class="text-[25px]" id="price"></h3>
             </div>
             <!-- add to cart button -->
             <div class="flex gap-2 items-center justify-center m-auto bg-black py-4 w-[280px] shadow-2xl text-white rounded-[40px]" id="addToCartButton">

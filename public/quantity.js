@@ -11,7 +11,7 @@ export function quantityValueHandel() {
         
     })
     quantityNegative.addEventListener('click',()=>{
-        if (quantity>0) {
+        if (quantity>1) {
         quantity--
     updateQuantityInput();
 

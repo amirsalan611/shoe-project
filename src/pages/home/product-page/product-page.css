@@ -16,11 +16,31 @@
   .swiper-pagination-bullet {
   margin: 0 3px;
 }
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom,8px);
+  top: var(--swiper-pagination-top,auto);
+  left: 0;
+  height: 10px;
+  width: 100%;
+  top: 400px;
+}
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* مخفی کردن نوار اسکرول در کروم و سافاری */
+  display: none;
 }
 .scrollbar-hide {
-  -ms-overflow-style: none; /* مخفی کردن نوار اسکرول در اینترنت اکسپلورر */
-  scrollbar-width: none; /* مخفی کردن نوار اسکرول در فایرفاکس */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.brown{
+  background-color: #46240a;
+}
+
+.blue{
+  background-color: #0744c7;
+}
+
+.red{
+  background-color: #8f0707;
 }
