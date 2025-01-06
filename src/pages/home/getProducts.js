@@ -20,7 +20,6 @@ export async function getAllProducts() {
                 location.href = "../log-in/log-in.html"
             }
             throw new Error("response is not ok!");
-            
         }
 
         const result = await response.json()

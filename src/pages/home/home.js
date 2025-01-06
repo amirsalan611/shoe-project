@@ -1,8 +1,8 @@
 import { brandHandler } from "./brandHandler.js";
 import { getAllProducts } from "./getProducts.js";
 const loadingSection = document.getElementById("loading")
-// import { BrandNameHandler } from "./brand-page/brandPage.js";''
 const productsSection = document.getElementById("productsSection")
+const cart = document.getElementById("cart")
 
 document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = document.querySelector('input[name="filter"]:checked');
@@ -92,7 +92,12 @@ brandCards.forEach((card) => {
 function GoToBrandPage(brand) {
     window.location.href=`./brand-page/brand-page.html?brand=${encodeURIComponent(brand)}`
 }
-
+goToCartPage()
+function goToCartPage() {
+    cart.addEventListener('click',()=>{
+        window.location.href="../cart-page/cartPage.html"
+    })
+}
 
 
 

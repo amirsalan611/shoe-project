@@ -1,5 +1,6 @@
 const quantityNegative = document.getElementById("quantityNegative")
 const quantityInput = document.getElementById("quantityInput")
+const cartQuantityInput = document.getElementById("quantityInput")
 const quantityPlus = document.getElementById("quantityPlus")
 
 let quantity = 0
@@ -20,4 +21,5 @@ export function quantityValueHandel() {
 
 function updateQuantityInput() {
     quantityInput.value = quantity;
+    cartQuantityInput.value = quantity
 }

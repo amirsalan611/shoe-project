@@ -16,7 +16,8 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get("productId");
 
 let product_Id = ""
-
+let productImageURL = ""
+let SinglePrice = ""
 
 getProduct(productId);
 async function getProduct(Id) {
@@ -53,6 +54,7 @@ async function getProduct(Id) {
 
 let productPrice = "";
 function renderProduct(product) {
+  productImageURL = product.imageURL[0]
   product.imageURL.map((item) => {
     images.innerHTML += `<div class="swiper-slide">
     <img
@@ -81,6 +83,7 @@ function renderProduct(product) {
                 </label>`;
   });
   price.textContent = "$" + product.price;
+  SinglePrice = product.price
   productPrice = product.price;
   loading.classList.add("hidden");
   renderSwiper();
@@ -128,10 +131,13 @@ function addToCart() {
   let product_size = ""
   let product_color = ""
   let product_quantity = ""
-  
+  let ProductName = productName.textContent
+  let productPrice = ""
+
   addToCartButton.addEventListener("click", async () => {
     product_quantity = quantityInput.value
-    
+    productPrice = SinglePrice * quantityInput.value
+
     const colorOption = document.querySelectorAll('input[name="color"]:checked')
     product_color = colorOption[0].id || null 
 
@@ -154,9 +160,13 @@ function addToCart() {
         "id" : product_Id,
         "color" : product_color,
         "size" : product_size,
-        "quantity" : product_quantity 
+        "quantity" : product_quantity ,
+        "imageURL" : productImageURL,
+        ProductName,
+        productPrice
       })
     }).then((response)=>{
+      console.log("sended to carts");
       if (!response.ok) {
         if (response.status === 403) {
           window.location.href = "../../log-in/log-in.html"
