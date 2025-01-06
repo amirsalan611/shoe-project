@@ -133,12 +133,17 @@ function addToCart() {
     product_quantity = quantityInput.value
     
     const colorOption = document.querySelectorAll('input[name="color"]:checked')
-    product_color = colorOption[0].id
+    product_color = colorOption[0].id || null 
 
     const sizeOption = document.querySelectorAll('input[name="size"]:checked')
-    product_size = sizeOption[0].id
+    product_size = sizeOption[0].id || null 
 
-    await fetch(`${baseURL}/api/records/carts`,{
+    if (product_color === null || product_size === null) {
+      console.log("color or size is null");
+      return;
+    }
+
+    const response = await fetch(`${baseURL}/api/records/carts`,{
       method:"POST",
       headers:{
         api_key: API_KEY,
