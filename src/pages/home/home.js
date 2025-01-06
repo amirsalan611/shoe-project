@@ -72,7 +72,6 @@ async function renderProducts() {
 
 
 function productPage(productId) {
-    console.log(productId);
     window.location.href = `./product-page/product-page.html?productId=${encodeURIComponent(productId)}`;
 }
 

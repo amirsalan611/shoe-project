@@ -24,7 +24,7 @@ async function productsRender(brand) {
     const products = await getBrandProduct(brand);
     console.log(products);
     products.map((product) => {
-      productsSection.innerHTML += `<div class="flex flex-col items-center gap-3">
+      productsSection.innerHTML += `<div onclick="productPage(${product.id})" class="flex flex-col items-center gap-3" >
         <div class="bg-[#F3F3F3] rounded-[24px] p-5">
           <img src="${product.imageURL[0]}" alt="" />
         </div>
@@ -36,11 +36,11 @@ async function productsRender(brand) {
     });
 }
 
-
-// backBtn.addEventListener('click',()=>{
-//     location.href="../home.html"
-// })
-
 backBtn.addEventListener('click', () => {
     history.back();
 });
+
+function productPage(productId) {
+  window.location.href = `../product-page/product-page.html?productId=${encodeURIComponent(productId)}`;
+}
+window.productPage = productPage;
