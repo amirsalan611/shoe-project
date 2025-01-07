@@ -12,10 +12,11 @@ const loading = document.getElementById("loading");
 const addToCartButton = document.getElementById("addToCartButton");
 const quantityInput = document.getElementById("quantityInput");
 const succifullyAdd = document.getElementById("succifullyAdd")
+const addToWishlistBTN = document.getElementById("addToWishlistBTN")
+const wishlistBTN = document.getElementById("wishlistBTN")
 
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('productId');
-
 
 let product_Id = ""
 let productImageURL = ""
@@ -88,11 +89,11 @@ function renderProduct(product) {
   price.textContent = "$" + product.price;
   SinglePrice = product.price
   productPrice = product.price;
-  loading.classList.add("hidden");
   renderSwiper();
   quantityValueHandel();
   TotalValueHandler()
   addToCart()
+  isProductInWishlist()
 }
 
 function renderSwiper() {
@@ -185,3 +186,68 @@ function addToCart() {
     })
   });
 }
+
+let wishlistProduct = ""
+
+async function isProductInWishlist() {
+  const response = await fetch(`${baseURL}/api/records/wishlist`,{
+    method: "GET",
+    headers:{
+          api_key:API_KEY,
+          Authorization:`Bearer ${accessToken()}`
+    },
+  })
+  if (!response.ok) {
+    console.log("Whishlist get response is not ok!");
+  }
+  const wishlist = await response.json();
+  console.log(wishlist.records);
+  const isAdded = await wishlist.records.some((item) => item.product_id === product_Id);
+  wishlistProduct = await wishlist.records.find((item) => item.product_id === product_Id);
+  console.log(wishlistProduct);
+  if (isAdded) {
+    wishlistBTN.dataset.added = "true";
+    wishlistBTN.innerHTML = `<img src="../../../../assets/svg/red heart.svg" alt="heart" class="m-2 w-6" id="addToWishlistBTN"></div>`
+  }
+  loading.classList.add("hidden");
+  addToWishlist()
+  removeProductFromWishlist(await wishlistProduct.id)
+}
+
+ function addToWishlist() {
+  if (wishlistBTN.dataset.added === "false") {
+    addToWishlistBTN.addEventListener('click',async()=>{
+      wishlistBTN.innerHTML = `<img src="../../../../assets/svg/red heart.svg" alt="heart" class="m-2 w-6" id="addToWishlistBTN"></div>`
+      const isAdded = wishlistBTN.dataset.added === "true";
+      const response = await fetch(`${baseURL}/api/records/wishlist`,{
+        method: 'post',
+        headers:{
+          "Content-Type" : "application/json",
+            api_key:API_KEY,
+            Authorization:`Bearer ${accessToken()}`
+        },
+        body : JSON.stringify({
+          "product_id" : product_Id,
+        })
+    })
+    if (!response.ok) {
+      console.log("response is not ok!");
+    }
+    console.log("Product added to wishlist!");
+    })
+  }
+}
+async function removeProductFromWishlist(id) {
+  if (wishlistBTN.dataset.added === "true") {
+    const response = await fetch(`${baseURL}/api/records/wishlist/${id}`,{
+      method: 'DELETE',
+      headers:{
+        "Content-Type" : "application/json",
+          api_key:API_KEY,
+          Authorization:`Bearer ${accessToken()}`
+      }
+}).then(()=>{
+  wishlistBTN.dataset.added = "false"
+  wishlistBTN.innerHTML = `<img src="../../../../assets/svg/heart.svg" alt="heart" class="m-2 w-6" id="addToWishlistBTN"></div>`
+})
+}}

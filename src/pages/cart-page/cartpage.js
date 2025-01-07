@@ -47,7 +47,6 @@ async function renderCarts() {
   }
   carts.forEach((product) => {
     totalPrice += product.productPrice * product.quantity
-    console.log(totalPrice);
     cartsSection.innerHTML += `<div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px] " >
             <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]" onclick="productPage(${product.product_id})">
               <img
@@ -122,8 +121,11 @@ async function renderCarts() {
             }
     
             inputField.value = quantity;
-    
+
+            // setTimeout(() => {
+            // }, 3000);
             renderCarts();
+    
             return
           } catch (error) {
             console.error(`Error updating quantity: ${error.message}`);
@@ -154,7 +156,10 @@ async function renderCarts() {
     
             inputField.value = quantity;
 
-            renderCarts();
+            // setTimeout(() => {
+            //   renderCarts();
+            //   }, 3000);
+
             return
           } catch (error) {
             console.error(`Error updating quantity: ${error.message}`);
@@ -213,7 +218,6 @@ function removeModal(id,name, color, imageURL, size, quantity , price) {
             closeModal()
             document.getElementById("remove").addEventListener('click',()=>{
                 remove(id)
-                console.log(id);
             })
             
 }

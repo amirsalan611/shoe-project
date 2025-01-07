@@ -12,7 +12,9 @@
     <header class="flex flex-col py-3 fixed top-0 left-0 w-full bg-white z-10">
       <div class="flex justify-between w-full px-6">
         <div class="flex items-center justify-items-center">
-          <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+          <div class="w-10 h-10 flex items-center" id="backArrow">
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+          </div>
           <h3 class="mx-6 pb-1 text-[20px] font-semibold">Most Popular</h3>
         </div>
         <div class="flex items-center justify-items-center">
@@ -24,147 +26,76 @@
         </div>
       </div>
       <!-- brands -->
-      <div class="pt-5 pl-6 flex gap-3 overflow-x-auto scrollbar-hide">
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" checked />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">All</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Nike</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Adidas</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Puma</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Asics</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Reebok</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]"
-          >
-            <p class="py-2.5 px-5 font-medium">New Ba..</p>
-          </div>
-        </label>
-        <label class="cursor-pointer">
-          <input type="radio" name="filter" class="hidden peer" />
-          <div
-            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]"
-          >
-            <p class="py-2.5 px-5 font-medium">Converse</p>
-          </div>
-        </label>
-      </div>
+      <section class="flex flex-col mt-4 sticky top-0 bg-white z-10">
+            <div class="mt-5 flex gap-3 overflow-x-auto scrollbar-hide">
+                <label class="cursor-pointer ml-6">
+                  <input type="radio" id="all" name="filter" class="hidden peer"  checked>
+                  <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] ">
+                    <p class="py-2.5 px-5 font-medium">All</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" id="nike" name="filter" class="hidden peer">
+                  <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
+                    <p class="py-2.5 px-5 font-medium">Nike</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" id="adidas" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
+                      <p class="py-2.5 px-5 font-medium">Adidas</p>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" id="puma" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
+                      <p class="py-2.5 px-5 font-medium">Puma</p>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" id="asics" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
+                      <p class="py-2.5 px-5 font-medium">Asics</p>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" id="reebok" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
+                      <p class="py-2.5 px-5 font-medium">Reebok</p>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer ">
+                    <input type="radio" id="new balance" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]">
+                      <p class="py-2.5 px-5 font-medium">New Ba..</p>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer ">
+                    <input type="radio" id="Converse" name="filter" class="hidden peer">
+                    <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]">
+                      <p class="py-2.5 px-5 font-medium">Converse</p>
+                    </div>
+                  </label>
+              </div>
+      </section>
     </header>
     <!-- Product cards -->
-    <section class="m-6 grid grid-cols-2 gap-4 mt-[140px]">
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
-      <div class="flex flex-col items-center gap-3">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="" />
-        </div>
-        <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <h3>$ 85.00</h3>
-        </div>
-      </div>
+    <section class="m-6 grid grid-cols-2 gap-4 mt-[150px]" id="productsSection">
+
+
+      <div class="dot-spinner col-span-2 mx-auto my-10 hidden" id="loading">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+    </div>
+
+    
     </section>
+    <script src="./Most-popular-page.js" type="module"></script>
   </body>
 </html>

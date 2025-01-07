@@ -3,6 +3,7 @@ import { getAllProducts } from "./getProducts.js";
 const loadingSection = document.getElementById("loading")
 const productsSection = document.getElementById("productsSection")
 const cart = document.getElementById("cart")
+const mostPopularBTN = document.getElementById("mostPopularBTN")
 
 document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = document.querySelector('input[name="filter"]:checked');
@@ -50,6 +51,7 @@ async function renderBrandProducts(brand) {
                 </div>
             </div>`
     })
+    
 }
 
 async function renderProducts() {
@@ -68,6 +70,7 @@ async function renderProducts() {
                 </div>
             </div>`
     })
+    mostPopularHandler()
 }
 
 
@@ -77,7 +80,6 @@ function productPage(productId) {
 }
 
 window.productPage = productPage;
-
 
 const brandCards = document.querySelectorAll("#brandBox > div");
 
@@ -100,6 +102,10 @@ function goToCartPage() {
     })
 }
 
+function mostPopularHandler() {
+    mostPopularBTN.addEventListener('click',()=>{
+    window.location.href="./most-popular-page/most-popular-page.html"})
+}
 
 
 
