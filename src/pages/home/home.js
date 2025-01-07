@@ -4,6 +4,7 @@ const loadingSection = document.getElementById("loading")
 const productsSection = document.getElementById("productsSection")
 const cart = document.getElementById("cart")
 const mostPopularBTN = document.getElementById("mostPopularBTN")
+const wishlist = document.getElementById("wishlist")
 
 document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = document.querySelector('input[name="filter"]:checked');
@@ -28,7 +29,6 @@ filterOptions.forEach((option) => {
         }
     });
 });
-
 
 
 async function renderBrandProducts(brand) {
@@ -71,6 +71,7 @@ async function renderProducts() {
             </div>`
     })
     mostPopularHandler()
+    goToWishlistPage()
 }
 
 
@@ -107,6 +108,11 @@ function mostPopularHandler() {
     window.location.href="./most-popular-page/most-popular-page.html"})
 }
 
+function goToWishlistPage() {
+    wishlist.addEventListener('click',()=>{
+        window.location.href = "./wishlist/wishlist.html"
+    })
+}
 
 
 

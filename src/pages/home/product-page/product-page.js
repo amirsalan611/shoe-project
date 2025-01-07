@@ -126,10 +126,10 @@ quantityNegative.addEventListener("click", () => {
   price.innerHTML = "$ " + quantityInput.value * productPrice;
 });
 
+}
 backArrow.addEventListener("click", () => {
   history.back();
 });
-}
 
 function addToCart() {
   let product_size = ""
@@ -207,6 +207,7 @@ async function isProductInWishlist() {
   console.log(wishlistProduct);
   if (isAdded) {
     wishlistBTN.dataset.added = "true";
+    console.log("wishlist dataset added is true");
     wishlistBTN.innerHTML = `<img src="../../../../assets/svg/red heart.svg" alt="heart" class="m-2 w-6" id="addToWishlistBTN"></div>`
   }
   loading.classList.add("hidden");
@@ -237,7 +238,8 @@ async function isProductInWishlist() {
     })
   }
 }
-async function removeProductFromWishlist(id) {
+ function removeProductFromWishlist(id) {
+  addToWishlistBTN.addEventListener('click',async()=>{
   if (wishlistBTN.dataset.added === "true") {
     const response = await fetch(`${baseURL}/api/records/wishlist/${id}`,{
       method: 'DELETE',
@@ -250,4 +252,4 @@ async function removeProductFromWishlist(id) {
   wishlistBTN.dataset.added = "false"
   wishlistBTN.innerHTML = `<img src="../../../../assets/svg/heart.svg" alt="heart" class="m-2 w-6" id="addToWishlistBTN"></div>`
 })
-}}
+}})}

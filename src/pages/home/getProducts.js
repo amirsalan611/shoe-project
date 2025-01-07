@@ -27,7 +27,7 @@ export async function getAllProducts() {
 
         return result.records
     }catch(error) {
-        console.log(`from cath ${error.message}`);
+        console.log(`from catch ${error.message}`);
         loadingSection.classList.add("hidden")
 
     }

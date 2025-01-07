@@ -12,7 +12,7 @@
     <header class="flex flex-col py-3  fixed top-0 left-0 w-full bg-white z-10">
       <div class="flex justify-between w-full px-6">
         <div class="flex items-center justify-items-center">
-        <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+        <img src="../../../../assets/svg/back-arrow.svg" alt="back button" id="backArrow"/>
         <h3 class="mx-6 pb-1 text-[20px] font-semibold">My Wishlist</h3>
       </div>
       <div class="flex items-center justify-items-center">
@@ -73,167 +73,21 @@
     </header>
 
               <!-- Product cards -->
-              <section class="m-6 grid grid-cols-2 gap-4 mt-[140px]">
-                <div class="flex flex-col items-center gap-3 relative">
-                    <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-                        <img src="../../../../assets/svg/shous.svg" alt="">
-                    </div>
-                    <div class="self-start">
-                        <h3 class="font-bold">K-Swiss ista Train...</h3>
-                        <div class="relative">
-                            <div class="flex gap-2 items-center">
-                            <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                            <h3>4.6</h3>
-                            <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                            <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                            </div>
-                            </div>
-                        <h3>$ 85.00</h3>
-                    </div>
-                    <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-                        <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-                    </div>
-                </div>
-                <div class="flex flex-col items-center gap-3 relative">
-                  <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-                      <img src="../../../../assets/svg/shous.svg" alt="">
-                  </div>
-                  <div class="self-start">
-                      <h3 class="font-bold">K-Swiss ista Train...</h3>
-                      <div class="relative">
-                          <div class="flex gap-2 items-center">
-                          <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                          <h3>4.6</h3>
-                          <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                          <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                          </div>
-                          </div>
-                      <h3>$ 85.00</h3>
-                  </div>
-                  <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-                      <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-                  </div>
+              <section class="m-6 grid grid-cols-2 gap-4 mt-[140px]" id="productsSection">
+
+                <div class="dot-spinner col-span-2 mx-auto my-10 hidden" id="loading">
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
               </div>
-              <div class="flex flex-col items-center gap-3 relative">
-                <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-                    <img src="../../../../assets/svg/shous.svg" alt="">
-                </div>
-                <div class="self-start">
-                    <h3 class="font-bold">K-Swiss ista Train...</h3>
-                    <div class="relative">
-                        <div class="flex gap-2 items-center">
-                        <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                        <h3>4.6</h3>
-                        <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                        <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                        </div>
-                        </div>
-                    <h3>$ 85.00</h3>
-                </div>
-                <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-                    <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-3 relative">
-              <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-                  <img src="../../../../assets/svg/shous.svg" alt="">
-              </div>
-              <div class="self-start">
-                  <h3 class="font-bold">K-Swiss ista Train...</h3>
-                  <div class="relative">
-                      <div class="flex gap-2 items-center">
-                      <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                      <h3>4.6</h3>
-                      <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                      <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                      </div>
-                      </div>
-                  <h3>$ 85.00</h3>
-              </div>
-              <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-                  <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-              </div>
-          </div>
-          <div class="flex flex-col items-center gap-3 relative">
-            <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-                <img src="../../../../assets/svg/shous.svg" alt="">
-            </div>
-            <div class="self-start">
-                <h3 class="font-bold">K-Swiss ista Train...</h3>
-                <div class="relative">
-                    <div class="flex gap-2 items-center">
-                    <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                    <h3>4.6</h3>
-                    <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                    <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                    </div>
-                    </div>
-                <h3>$ 85.00</h3>
-            </div>
-            <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-                <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-            </div>
-        </div>
-        <div class="flex flex-col items-center gap-3 relative">
-          <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-              <img src="../../../../assets/svg/shous.svg" alt="">
-          </div>
-          <div class="self-start">
-              <h3 class="font-bold">K-Swiss ista Train...</h3>
-              <div class="relative">
-                  <div class="flex gap-2 items-center">
-                  <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                  <h3>4.6</h3>
-                  <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                  <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                  </div>
-                  </div>
-              <h3>$ 85.00</h3>
-          </div>
-          <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-              <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-          </div>
-      </div>
-      <div class="flex flex-col items-center gap-3 relative">
-        <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-            <img src="../../../../assets/svg/shous.svg" alt="">
-        </div>
-        <div class="self-start">
-            <h3 class="font-bold">K-Swiss ista Train...</h3>
-            <div class="relative">
-                <div class="flex gap-2 items-center">
-                <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-                <h3>4.6</h3>
-                <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-                <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-                </div>
-                </div>
-            <h3>$ 85.00</h3>
-        </div>
-        <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-            <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-        </div>
-    </div>
-    <div class="flex flex-col items-center gap-3 relative">
-      <div class="bg-[#F3F3F3] rounded-[24px] p-5">
-          <img src="../../../../assets/svg/shous.svg" alt="">
-      </div>
-      <div class="self-start">
-          <h3 class="font-bold">K-Swiss ista Train...</h3>
-          <div class="relative">
-              <div class="flex gap-2 items-center">
-              <img src="../../../../assets/svg/star.svg" alt="" class="w-5">
-              <h3>4.6</h3>
-              <div class="w-0 h-4 border-l-[1px] border-gray-800"></div>
-              <button class="py-1 px-2 bg-gray-200 rounded-md text-[12px]"> 6.641 sold </button>
-              </div>
-              </div>
-          <h3>$ 85.00</h3>
-      </div>
-      <div class="absolute right-3 top-3 w-8 h-8 bg-[#343A40] rounded-full flex justify-center items-center">
-          <img src="../../../../assets/images/icons8-love-52.png" alt="love icon" class="w-6">
-      </div>
-  </div>
+
               </section>
+
+    <script src="./wishlist.js" type="module"></script>
   </body>
 </html>
