@@ -1,10 +1,13 @@
 import { brandHandler } from "./brandHandler.js";
 import { getAllProducts } from "./getProducts.js";
+import { searching } from "./searchSection.js";
 const loadingSection = document.getElementById("loading")
 const productsSection = document.getElementById("productsSection")
 const cart = document.getElementById("cart")
 const mostPopularBTN = document.getElementById("mostPopularBTN")
 const wishlist = document.getElementById("wishlist")
+
+searching()
 
 document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = document.querySelector('input[name="filter"]:checked');

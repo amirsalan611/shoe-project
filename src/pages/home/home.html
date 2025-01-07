@@ -1,190 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../../../public/public.css">
-    <link rel="stylesheet" href="./home.css">
-</head>
-<body class="relative">
-    <header class="flex justify-between px-5 py-4 w-full fixed top-0 bg-white  z-10">
+    <link rel="stylesheet" href="../../../public/public.css" />
+    <link rel="stylesheet" href="./home.css" />
+  </head>
+  <body class="relative">
+    <header class="px-5 pt-4 w-full fixed top-0 bg-white z-50">
+      <div class="flex justify-between">
         <div class="flex gap-4">
-            <div>
-                <img src="../../../assets/images/photo_2024-10-09_11-38-41.jpg" alt="profile" class="w-12 h-12 rounded-full">
-            </div>
-            <div class="flex flex-col">
-                <p>Good Morning 👋</p>
-                <p class="font-bold">Arsalan poodat</p>
-            </div>
+          <div>
+            <img
+              src="../../../assets/images/photo_2024-10-09_11-38-41.jpg"
+              alt="profile"
+              class="w-12 h-12 rounded-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <p>Good Morning 👋</p>
+            <p class="font-bold">Arsalan poodat</p>
+          </div>
         </div>
         <div class="flex justify-center items-center gap-4">
-            <img src="../../../assets/svg/bell.svg" alt="bell" class="w-6">
-            <img src="../../../assets/svg/heart.svg" alt="heart" class="w-6" id="wishlist">
+          <img src="../../../assets/svg/bell.svg" alt="bell" class="w-6" />
+          <img
+            src="../../../assets/svg/heart.svg"
+            alt="heart"
+            class="w-6"
+            id="wishlist"
+          />
         </div>
+      </div>
+      <!-- searchBar -->
+      <section
+        id=" "
+        class="flex my-2 gap-3 bg-[#FAFAFA] rounded-[15px] w-[380px] py-[8px] px-[12px] focus-within:outline focus-within:outline-1 focus-within:outline-black"
+      >
+        <img src="../../../assets/svg/search.svg" alt="search" />
+        <input
+          type="text"
+          class="bg-opacity-0 bg-black w-full outline-none"
+          id="searchInput"
+          placeholder="Search"
+        />
+      </section>
     </header>
-    <!-- searchBar -->
-    <section id="searchBar" class=" mt-[84px] flex mx-6 gap-3 bg-[#FAFAFA] rounded-[10px] w-[380px] py-[8px] px-[12px] focus-within:outline focus-within:outline-1 focus-within:outline-black">
-        <img src="../../../assets/svg/search.svg" alt="search">
-        <input type="text" class="bg-opacity-0 bg-black w-full outline-none" placeholder="Search">
-    </section>
+
+    <div class="bg-white w-full px-5 h-full z-40 absolute top-0 bottom-[67px] hidden" id="searchModal" >
+      <div class="flex justify-between items-center font-medium border-b-[1px] py-2 fixed w-[388px] top-[120px] left-0 right-0 mx-5 bg-white" id="recentSection">
+
+      </div>
+      <div class="hidden" id="recent">
+
+    </div>
+      <div
+        class="flex flex-col items-center text-center px-5 mt-[100px] hidden"
+        id="notFound"
+      >
+        <img src="../../../assets/images/Doc.png" alt="" class="w-[80%]" />
+        <h3 class="font-medium text-[24px]">Not Found</h3>
+        <p class="text-[18px] text-gray-600">
+          Sorry, the keyword you entered cannot be found, please check again or
+          search with another keyword.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 bg-white scrollbar-hid mt-[60px] pb-[100px]" id="searchResults"></div>
+    </div>
     <!-- brandBox -->
-        <section id="brandBox" class="grid grid-cols-4 grid-rows-2 mx-3 mt-[10px] justify-center items-center justify-items-center">
+    <section
+      id="brandBox"
+      class="mt-[125px] grid grid-cols-4 grid-rows-2 mx-3 mt-[10px] justify-center items-center justify-items-center"
+    >
+      <div
+        id="nikeCard"
+        class="flex flex-col text-center w-[60px] gap-[13px] mt-3 mx-2"
+        data-id="Nike"
+      >
+        <div
+          class="w-full h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/Nike-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Nike</h3>
+      </div>
 
-            <div id="nikeCard" class="flex flex-col text-center w-[60px] gap-[13px] mt-3 mx-2" data-id="Nike">
-                <div class="w-full h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/Nike-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Nike</h3>
-            </div>
+      <div
+        id="adidasCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2"
+        data-id="Adidas"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/adidas-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Adidas</h3>
+      </div>
 
-            <div id="adidasCard" class="flex flex-col text-center  gap-[13px] mt-3 mx-2" data-id="Adidas">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/adidas-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Adidas</h3>
-            </div>
-            
-            <div id="pumaCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2" data-id="Puma">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/puma-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Puma</h3>
-            </div>
+      <div
+        id="pumaCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2"
+        data-id="Puma"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/puma-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Puma</h3>
+      </div>
 
-            <div id="asicsCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2" data-id="Asics">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/asics-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Asics</h3>
-            </div>
+      <div
+        id="asicsCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2"
+        data-id="Asics"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/asics-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Asics</h3>
+      </div>
 
-            <div id="reebokCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2" data-id="Reebok">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/reebok-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Reebok</h3>
-            </div>
+      <div
+        id="reebokCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2"
+        data-id="Reebok"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/reebok-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Reebok</h3>
+      </div>
 
-            <div id="newbalanceCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2" data-id="New Balance">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/newbalance-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">New Ba..</h3>
-            </div>
+      <div
+        id="newbalanceCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2"
+        data-id="New Balance"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/newbalance-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">New Ba..</h3>
+      </div>
 
-            <div id="converseCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2 items-center" data-id="Converse">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/converse-logo.svg" alt="">
-                </div>
-                <h3 class="font-medium">Converse</h3>
-            </div>
+      <div
+        id="converseCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2 items-center"
+        data-id="Converse"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/converse-logo.svg" alt="" />
+        </div>
+        <h3 class="font-medium">Converse</h3>
+      </div>
 
-            <div id="moreCard" class="flex flex-col text-center gap-[13px] mt-3 mx-2 items-center">
-                <div class=" w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]">
-                    <img src="../../../assets/svg/more-icon.svg" alt="">
-                </div>
-                <h3 class="font-medium">More..</h3>
-            </div>
-        </section>
-        <!-- Most Popular -->
-        <section class="flex flex-col mt-4 ">
-            <div class="flex justify-between items-center mx-6">
-                <h3 class="text-[20px] font-semibold">Most Popular</h3>
-                <h3 class="text-[16px] font-semibold py-5" id="mostPopularBTN">See All</h3>
-            </div>
-                <div class="my-5 flex gap-3 overflow-x-auto scrollbar-hide">
-                    <label class="cursor-pointer ml-6">
-                      <input type="radio" id="all" name="filter" class="hidden peer"  checked>
-                      <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] ">
-                        <p class="py-2.5 px-5 font-medium">All</p>
-                      </div>
-                    </label>
-                    <label class="cursor-pointer">
-                      <input type="radio" id="nike" name="filter" class="hidden peer">
-                      <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
-                        <p class="py-2.5 px-5 font-medium">Nike</p>
-                      </div>
-                    </label>
-                    <label class="cursor-pointer">
-                        <input type="radio" id="adidas" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
-                          <p class="py-2.5 px-5 font-medium">Adidas</p>
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" id="puma" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
-                          <p class="py-2.5 px-5 font-medium">Puma</p>
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" id="asics" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
-                          <p class="py-2.5 px-5 font-medium">Asics</p>
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" id="reebok" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]">
-                          <p class="py-2.5 px-5 font-medium">Reebok</p>
-                        </div>
-                      </label>
-                      <label class="cursor-pointer ">
-                        <input type="radio" id="new balance" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]">
-                          <p class="py-2.5 px-5 font-medium">New Ba..</p>
-                        </div>
-                      </label>
-                      <label class="cursor-pointer ">
-                        <input type="radio" id="Converse" name="filter" class="hidden peer">
-                        <div class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]">
-                          <p class="py-2.5 px-5 font-medium">Converse</p>
-                        </div>
-                      </label>
-                  </div>
-        </section>
-        <!-- Product cards -->
-        <section class="m-6 mt-0 grid grid-cols-2 gap-4 relative" id="productsSection">
+      <div
+        id="moreCard"
+        class="flex flex-col text-center gap-[13px] mt-3 mx-2 items-center"
+      >
+        <div
+          class="w-[60px] h-[60px] flex justify-center items-center rounded-full bg-[#ECECEC]"
+        >
+          <img src="../../../assets/svg/more-icon.svg" alt="" />
+        </div>
+        <h3 class="font-medium">More..</h3>
+      </div>
+    </section>
+    <!-- Most Popular -->
+    <section class="flex flex-col mt-4">
+      <div class="flex justify-between items-center mx-6">
+        <h3 class="text-[20px] font-semibold">Most Popular</h3>
+        <h3 class="text-[16px] font-semibold py-5" id="mostPopularBTN">
+          See All
+        </h3>
+      </div>
+      <div class="my-5 flex gap-3 overflow-x-auto scrollbar-hide">
+        <label class="cursor-pointer ml-6">
+          <input
+            type="radio"
+            id="all"
+            name="filter"
+            class="hidden peer"
+            checked
+          />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">All</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="nike" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Nike</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="adidas" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Adidas</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="puma" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Puma</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="asics" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Asics</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="reebok" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Reebok</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input
+            type="radio"
+            id="new balance"
+            name="filter"
+            class="hidden peer"
+          />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]"
+          >
+            <p class="py-2.5 px-5 font-medium">New Ba..</p>
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" id="Converse" name="filter" class="hidden peer" />
+          <div
+            class="peer-checked:bg-[#343A40] peer-checked:text-white border-2 border-[#343A40] rounded-[25px] w-[107px]"
+          >
+            <p class="py-2.5 px-5 font-medium">Converse</p>
+          </div>
+        </label>
+      </div>
+    </section>
+    <!-- Product cards -->
+    <section
+      class="m-6 mt-0 grid grid-cols-2 gap-4 relative"
+      id="productsSection"
+    >
+      <div class="dot-spinner col-span-2 mx-auto my-10 hidden" id="loading">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+      </div>
+    </section>
 
-            <div class="dot-spinner col-span-2 mx-auto my-10 hidden" id="loading">
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-                <div class="dot-spinner__dot"></div>
-            </div>
-
-        </section>
-
-        <footer class="flex justify-between gap-10 px-12 pt-3 pb-4 bg-white w-full fixed bottom-0 left-0" >
-            <div class="flex flex-col items-center justify-center justify-items-center">
-                <img src="../../../assets/svg/home-icon.svg" alt="home">
-                <h3 class="text-[10px]">Home</h3>
-            </div>
-            <div class="flex flex-col items-center justify-center" id="cart">
-                <img src="../../../assets/svg/cart-icon.svg" alt="cart">
-                <h3 class="text-[10px]">Cart</h3>
-            </div>
-            <div class="flex flex-col mt-[3px] items-center justify-center justify-items-center" id="order">
-                <img src="../../../assets/svg/order-icon.svg" alt="order">
-                <h3 class="text-[10px]">Order</h3>
-            </div>
-            <div class="flex flex-col items-center justify-center justify-items-center">
-                <img src="../../../assets/svg/wallet-icon.svg" alt="order">
-                <h3 class="text-[10px]">Wallet</h3>
-            </div>
-            <div class="flex flex-col items-center justify-center justify-items-center">
-                <img src="../../../assets/svg/profile-icon.svg" alt="order">
-                <h3 class="text-[10px]">Profile</h3>
-            </div>
-        </footer>
+    <footer
+      class="flex justify-between gap-10 px-12 pt-3 pb-4 bg-white w-full fixed bottom-0 left-0 z-50"
+    >
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img src="../../../assets/svg/home-icon.svg" alt="home" id="home"/>
+        <h3 class="text-[10px]">Home</h3>
+      </div>
+      <div class="flex flex-col items-center justify-center" id="cart">
+        <img src="../../../assets/svg/cart-icon.svg" alt="cart" />
+        <h3 class="text-[10px]">Cart</h3>
+      </div>
+      <div
+        class="flex flex-col mt-[3px] items-center justify-center justify-items-center"
+        id="order"
+      >
+        <img src="../../../assets/svg/order-icon.svg" alt="order" />
+        <h3 class="text-[10px]">Order</h3>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img src="../../../assets/svg/wallet-icon.svg" alt="order" />
+        <h3 class="text-[10px]">Wallet</h3>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center justify-items-center"
+      >
+        <img src="../../../assets/svg/profile-icon.svg" alt="order" />
+        <h3 class="text-[10px]">Profile</h3>
+      </div>
+    </footer>
 
     <script src="./home.js" type="module"></script>
     <!-- <script src="../../../public/db.js"></script> -->
-</body>
+  </body>
 </html>
