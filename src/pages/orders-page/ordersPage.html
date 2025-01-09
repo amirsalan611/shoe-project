@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../../public/public.css">
+    <link rel="stylesheet" href="./orderPage.css">
     <title>Document</title>
   </head>
   <body>
@@ -31,17 +32,19 @@
       </div>
       <div class="pt-3 flex items-center">
         <label class="cursor-pointer w-full">
-          <input type="radio" name="order" class="hidden peer" checked />
+          <input type="radio" name="order" class="hidden peer" id="Active" checked />
           <div
             class="peer-checked:border-b-black peer-checked:text-black text-center border-b-[2px] border-b-gray-400 text-gray-400 pb-4"
+            id="active"
           >
             <p class="font-medium">Active</p>
           </div>
         </label>
         <label class="cursor-pointer w-full">
-          <input type="radio" name="order" class="hidden peer" />
+          <input type="radio" name="order" class="hidden peer" id="Completed"/>
           <div
             class="peer-checked:border-b-black peer-checked:text-black text-center border-b-[2px] border-b-gray-400 text-gray-400 pb-4"
+            id="Completed"
           >
             <p class="font-medium">Completed</p>
           </div>
@@ -60,175 +63,12 @@
     <!-- --------- -->
 
     <!-- active orders  -->
-    <!-- <div class="flex flex-col gap-5 p-5 mt-[120px] mb-[76px]">
-      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-          <img
-            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-            alt=""
-            class="min-w-[130px]"
-          />
-        </div>
-        <div class="flex flex-col w-full gap-1">
-          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
+    <div class="flex flex-col gap-5 p-5 mt-[120px] mb-[76px]" id="activeSection">
 
-          <div class="flex justify-cente items-center gap-2">
-            <div class="bg-black rounded-full w-4 h-4"></div>
-            <p class="text-gray-400 text-[13px]">Black</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Size = 42</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Qty = 1</p>
-          </div>
-
-          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
-            <h3 class="text-[10px]">In Delivery</h3>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">$105</p>
-            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
-                <h3 class="text-[12px]">Track Order</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-          <img
-            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-            alt=""
-            class="min-w-[130px]"
-          />
-        </div>
-        <div class="flex flex-col w-full gap-1">
-          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
-
-          <div class="flex justify-cente items-center gap-2">
-            <div class="bg-black rounded-full w-4 h-4"></div>
-            <p class="text-gray-400 text-[13px]">Black</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Size = 42</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Qty = 1</p>
-          </div>
-
-          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
-            <h3 class="text-[10px]">In Delivery</h3>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">$105</p>
-            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
-                <h3 class="text-[12px]">Track Order</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-          <img
-            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-            alt=""
-            class="min-w-[130px]"
-          />
-        </div>
-        <div class="flex flex-col w-full gap-1">
-          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
-
-          <div class="flex justify-cente items-center gap-2">
-            <div class="bg-black rounded-full w-4 h-4"></div>
-            <p class="text-gray-400 text-[13px]">Black</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Size = 42</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Qty = 1</p>
-          </div>
-
-          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
-            <h3 class="text-[10px]">In Delivery</h3>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">$105</p>
-            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
-                <h3 class="text-[12px]">Track Order</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-          <img
-            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-            alt=""
-            class="min-w-[130px]"
-          />
-        </div>
-        <div class="flex flex-col w-full gap-1">
-          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
-
-          <div class="flex justify-cente items-center gap-2">
-            <div class="bg-black rounded-full w-4 h-4"></div>
-            <p class="text-gray-400 text-[13px]">Black</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Size = 42</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Qty = 1</p>
-          </div>
-
-          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
-            <h3 class="text-[10px]">In Delivery</h3>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">$105</p>
-            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
-                <h3 class="text-[12px]">Track Order</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-        <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-          <img
-            src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-            alt=""
-            class="min-w-[130px]"
-          />
-        </div>
-        <div class="flex flex-col w-full gap-1">
-          <h3 class="font-medium text-[20px]">Air Jordan 3 Retro</h3>
-
-          <div class="flex justify-cente items-center gap-2">
-            <div class="bg-black rounded-full w-4 h-4"></div>
-            <p class="text-gray-400 text-[13px]">Black</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Size = 42</p>
-            <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-            <p class="text-gray-400 text-[13px]">Qty = 1</p>
-          </div>
-
-          <div class="bg-gray-200 text-center mt-1 w-16 rounded-[5px] p-1">
-            <h3 class="text-[10px]">In Delivery</h3>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <p class="text-[20px] font-medium">$105</p>
-            <div class="bg-black mx-2 text-center my-auto p-2 rounded-full w-[120px] text-white">
-                <h3 class="text-[12px]">Track Order</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    </div>
 
     <!-- completed orders -->
-    <div class="flex flex-col gap-5 p-5 mt-[120px] mb-[76px]">
+    <!-- <div class="flex flex-col gap-5 p-5 mt-[120px] mb-[76px]">
         <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
             <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
               <img
@@ -393,22 +233,23 @@
               </div>
             </div>
           </div>
-    </div>
-
+    </div> -->
+    
     <footer
       class="flex justify-between gap-10 px-12 pt-3 pb-4 bg-white w-full fixed bottom-0 left-0"
     >
       <div
         class="flex flex-col items-center justify-center justify-items-center"
+        id="home"
       >
         <img
           src="../../../assets/svg/home-96 (2).png"
           alt="home"
           class="w-[26px] h-[26px]"
         />
-        <h3 class="text-[10px]">Home</h3>
+        <h3 class="text-[10px]" >Home</h3>
       </div>
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center" id="cart">
         <img src="../../../assets/svg/cart-icon.svg" alt="cart" />
         <h3 class="text-[10px]">Cart</h3>
       </div>
@@ -435,6 +276,6 @@
         <h3 class="text-[10px]">Profile</h3>
       </div>
     </footer>
-    <script src="./orderPage.js"></script>
+    <script src="./orderPage.js" type="module"></script>
   </body>
 </html>

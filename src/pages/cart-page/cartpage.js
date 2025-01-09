@@ -5,6 +5,7 @@ const cartsSection = document.getElementById("cartsSection");
 const removeProductModal = document.getElementById("removeProductModal");
 const backdrop = document.getElementById("backdrop");
 const loading = document.getElementById("loading");
+const order = document.getElementById("order")
 
 let totalPrice = 0
 
@@ -257,3 +258,7 @@ function closeModal() {
 
 document.getElementById("home").addEventListener('click',()=>{
     window.location.href="../home/home.html"})
+
+order.addEventListener('click',()=>{
+  window.location.href="../orders-page/ordersPage.html"
+})
