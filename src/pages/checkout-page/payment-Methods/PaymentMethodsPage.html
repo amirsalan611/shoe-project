@@ -76,7 +76,7 @@
             </label>
 
             <div class="fixed bottom-0 p-5 left-0 right-0 bg-white border-t-[1px] shadow-inner rounded-t-[35px]">
-                <div class="bg-black p-5 w-full text-white rounded-full text-center">
+                <div class="bg-black p-5 w-full text-white rounded-full text-center" id="payBTN">
                     <h3>Apply</h3>
                 </div>
             </div>
@@ -84,14 +84,14 @@
       </div>
 
       <!-- Successfull modal  -->
-      <div class="fixed left-0 top-0 right-0 bottom-0 h-full z-10 bg-black bg-opacity-70"></div>
-      <div class="absolute left-0 top-0 z-20 flex w-full h-screen">
+      <div class="fixed left-0 top-0 right-0 bottom-0 h-full z-10 bg-black bg-opacity-70 hidden" id="backdrop"></div>
+      <div class="absolute left-0 top-0 z-20 flex w-full h-screen hidden" id="SuccessfullModal">
         <div class="w-full flex flex-col gap-3 justify-center items-center p-5 bg-white mx-10 h-[508px] mt-[120px] rounded-[50px]" >
           <img src="../../../../assets/images/payment-confirm.jpg" alt="">
           <h3 class="text-[25px] font-medium">Order Successfull!</h3>
           <p>You have Successfully made order.</p>
           <div class="flex flex-col pt-3 gap-3 w-full">
-            <div class="bg-black p-5 text-white rounded-full w-full text-center">
+            <div class="bg-black p-5 text-white rounded-full w-full text-center" id="viewOrder">
                 <h3>View Order</h3>
             </div>
             <div class="bg-gray-200 p-5 text-black rounded-full w-full text-center">
@@ -101,5 +101,6 @@
         </div>
       </div>
 
+      <script src="./paymentPage.js"></script>
 </body>
 </html>

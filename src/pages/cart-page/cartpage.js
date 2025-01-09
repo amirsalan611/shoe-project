@@ -156,10 +156,6 @@ async function renderCarts() {
     
             inputField.value = quantity;
 
-            // setTimeout(() => {
-            //   renderCarts();
-            //   }, 3000);
-
             return
           } catch (error) {
             console.error(`Error updating quantity: ${error.message}`);
@@ -175,15 +171,22 @@ function productPage(productId) {
 window.productPage = productPage;
     
 function checkoutHandler() {
-    document.getElementById("checkout").innerHTML = `<div class="flex flex-col p-5">
+    document.getElementById("checkout").innerHTML = `<div class="flex flex-col p-5" >
             <h3 class="text-[13px] text-gray-500">Total Price</h3>
             <h3 class="text-[25px]">$${totalPrice}</h3>
         </div>
-        <div class="flex items-center bg-black rounded-full w-[250px] m-5 text-white items-center justify-center shadow-xl gap-4">
+        <div class="flex items-center bg-black rounded-full w-[250px] m-5 text-white items-center justify-center shadow-xl gap-4" onclick="goToCheckOutPage()">
             <h3>Checkout</h3>
             <img src="../../../assets/svg/arrow.svg" alt="" class="w-[20px]">
         </div>`
 }
+
+function goToCheckOutPage() {
+  window.location.href="../checkout-page/checkoutPage.html"
+}
+
+window.goToCheckOutPage = goToCheckOutPage;
+
 
 function removeModal(id,name, color, imageURL, size, quantity , price) {
   removeProductModal.classList.remove("hidden");

@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/public.css">
+    <link rel="stylesheet" href="./checkoutPage.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Document</title>
 </head>
-<body>
+<body class="relative">
     
     <header class="flex flex-col py-3 fixed top-0 left-0 w-full bg-white z-10">
         <div class="flex justify-between w-full px-6">
           <div class="flex items-center justify-items-center">
-            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" />
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" class="p-3" id="backArrow"/>
             <h3 class="mx-6 pb-1 text-[20px] font-semibold">Checkout</h3>
           </div>
           <div class="flex items-center justify-items-center">
@@ -26,12 +27,25 @@
         </div>
       </header>
 
+      <div class="w-full pt-[300px] h-full absolute top-0 left-0 bg-white hidden z-50" id="loading">
+        <div class="dot-spinner col-span-2 mx-auto my-10 " >
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+        </div>
+      </div>
+
       <!-- Shipping address  -->
       <div class="mt-[58px] mx-5 border-b-[1px] border-b-gray-200">
         <div>
             <h3 class="text-[17px] font-medium pb-5">Shipping Address</h3>
         </div>
-        <div class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] ">
+        <div class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " id="chooseShipping">
             <div class=" flex justify-center items-center bg-gray-300 rounded-full w-[60px] h-[60px]">
                 <div class="bg-black rounded-full w-[45px] h-[45px] p-3">
                     <img src="../../../assets/svg/location.svg" alt="">
@@ -48,138 +62,14 @@
       </div>
 
       <!-- order list  -->
-      <div class="flex flex-col gap-5 py-5 m-5 border-b-gray-200 border-b-[1px]">
-
-        <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-              <img
-                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-                class="min-w-[130px]"
-              />
-            </div>
-            <div class="flex flex-col justify-between w-full gap-1">
-                <div class="flex items-center justify-cente justify-between">
-              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
-                </div>
-              <div class="flex justify-cente items-center gap-2">
-                <div class="bg-black rounded-full w-4 h-4"></div>
-                <p class="text-gray-400 text-[12px]">Black</p>
-                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-                <p class="text-gray-400 text-[12px]">Size = 42</p>
-              </div>
-    
-    
-              <div class="flex items-center justify-between">
-                <p class="text-[20px] font-medium">$105</p>
-                <div class="flex items-center ml-5 gap-3">
-                    <div class="flex bg-[#ececed] justify-center items-center w-[40px] h-[40px] rounded-full">
-                        <h3>1</h3>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-              <img
-                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-                class="min-w-[130px]"
-              />
-            </div>
-            <div class="flex flex-col justify-between w-full gap-1">
-                <div class="flex items-center justify-cente justify-between">
-              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
-                </div>
-              <div class="flex justify-cente items-center gap-2">
-                <div class="bg-black rounded-full w-4 h-4"></div>
-                <p class="text-gray-400 text-[12px]">Black</p>
-                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-                <p class="text-gray-400 text-[12px]">Size = 42</p>
-              </div>
-    
-    
-              <div class="flex items-center justify-between">
-                <p class="text-[20px] font-medium">$105</p>
-                <div class="flex items-center ml-5 gap-3">
-                    <div class="flex bg-[#ececed] justify-center items-center w-[40px] h-[40px] rounded-full">
-                        <h3>1</h3>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-              <img
-                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-                class="min-w-[130px]"
-              />
-            </div>
-            <div class="flex flex-col justify-between w-full gap-1">
-                <div class="flex items-center justify-cente justify-between">
-              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
-                </div>
-              <div class="flex justify-cente items-center gap-2">
-                <div class="bg-black rounded-full w-4 h-4"></div>
-                <p class="text-gray-400 text-[12px]">Black</p>
-                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-                <p class="text-gray-400 text-[12px]">Size = 42</p>
-              </div>
-    
-    
-              <div class="flex items-center justify-between">
-                <p class="text-[20px] font-medium">$105</p>
-                <div class="flex items-center ml-5 gap-3">
-                    <div class="flex bg-[#ececed] justify-center items-center w-[40px] h-[40px] rounded-full">
-                        <h3>1</h3>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="shadow-xl flex gap-4 p-5 bg-white rounded-[35px]">
-            <div class="rounded-[20px] min-w-[130px]  overflow-hidden h-[130px] w-[110px]">
-              <img
-                src="../../../assets/images/NIKE+DUNK+LOW+RETRO.png"
-                alt=""
-                class="min-w-[130px]"
-              />
-            </div>
-            <div class="flex flex-col justify-between w-full gap-1">
-                <div class="flex items-center justify-cente justify-between">
-              <h3 class="font-medium text-[18px]">Air Jordan 3 Retro</h3>
-                </div>
-              <div class="flex justify-cente items-center gap-2">
-                <div class="bg-black rounded-full w-4 h-4"></div>
-                <p class="text-gray-400 text-[12px]">Black</p>
-                <div class="bg-gray-400 h-[12px] w-[1px]"></div>
-                <p class="text-gray-400 text-[12px]">Size = 42</p>
-              </div>
-    
-    
-              <div class="flex items-center justify-between">
-                <p class="text-[20px] font-medium">$105</p>
-                <div class="flex items-center ml-5 gap-3">
-                    <div class="flex bg-[#ececed] justify-center items-center w-[40px] h-[40px] rounded-full">
-                        <h3>1</h3>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
+      <div class="flex flex-col gap-5 py-5 m-5 border-b-gray-200 border-b-[1px] relative" id="orderList">
+        
           </div>
 
           <!-- choose shipping  -->
           <div class="p-5 pt-0">
             <h3 class="text-[17px] font-medium pb-5">Choose Shipping</h3>
-            <div class="flex justify-center items-center justify-between bg-white p-5 shadow-xl rounded-[20px] ">
+            <div class="flex justify-center items-center justify-between bg-white p-5 shadow-xl rounded-[20px] " id="shippingType">
                 <div class="flex justify-center gap-2 items-center">
                 <img src="../../../assets/svg/truck.svg" alt="truck" class="w-[40px]">
                 <h3 class="text-[17px] font-medium">Choose Shipping Type</h3>
@@ -217,10 +107,11 @@
            </div>
            <!-- continue to payment  -->
            <div class="fixed bottom-0 left-0 bg-white border-[1px] border-gray-200 rounded-t-[30px] flex items-center justify-center p-5 w-full">
-            <div class="bg-black text-white flex justify-center items-center w-full rounded-full p-5">
+            <div class="bg-black text-white flex justify-center items-center w-full rounded-full p-5" id="payment">
                 <h3>Continue to Payment</h3>
                 <img src="../../../assets/svg/arrow.svg" alt="" class="w-[24px]">
             </div>
         </div>
+        <script src="./checkout.js" type="module"></script>
 </body>
 </html>

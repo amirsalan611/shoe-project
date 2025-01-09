@@ -41,7 +41,6 @@ async function renderBrandProducts(brand) {
     productsSection.innerHTML= ""
 
     loadingSection.classList.remove("hidden")
-    console.log(loadingSection);
 
     products.map((product)=>{
         productsSection.innerHTML+=`<div onclick="productPage(${product.id})" class="flex flex-col items-center gap-3">
