@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="flex flex-col py-3 fixed top-0 left-0 pt-5 w-full bg-white z-10">
-        <div class="flex justify-between w-full px-6">
+    <header class="flex flex-col py-3 fixed top-0 left-0 w-full bg-white z-10">
+        <div class="flex justify-between w-full pr-6 pl-4">
           <div class="flex items-center justify-items-center">
-            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" id="backArrow"/>
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" id="backArrow" class="p-2"/>
             <h3 class="mx-6 pb-1 text-[22px] font-semibold">Shipping Address</h3>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="mt-[95px] mx-5">
 
                 <!-- adress card -->
-                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="shippingAddressHome">
+                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="Home">
                     <div class=" flex justify-center items-center bg-gray-300 rounded-full w-[60px] h-[60px]">
                         <div class="bg-black rounded-full w-[45px] h-[45px] p-3">
                             <img src="../../../../assets/svg/location.svg" alt="">
@@ -37,11 +37,11 @@
                         <p class="text-[14px] text-gray-500">61480 Sunbrook Park PC 5679</p>
                     </div>
                     <div class="flex items-center ml-auto">
-                        <input type="radio" name="shippingAddress" class="changeColor" id="shippingAddressHome">
+                        <input type="radio" name="shippingAddress" class="changeColor" id="Home" data-id="61480 Sunbrook Park PC 5679" checked>
                     </div>
                 </label>
 
-                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="shippingAddressOffice">
+                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="Office">
                     <div class=" flex justify-center items-center bg-gray-300 rounded-full w-[60px] h-[60px]">
                         <div class="bg-black rounded-full w-[45px] h-[45px] p-3">
                             <img src="../../../../assets/svg/location.svg" alt="">
@@ -52,11 +52,11 @@
                         <p class="text-[14px] text-gray-500">6993 Meadow Vally Terra, PC 3637</p>
                     </div>
                     <div class="flex items-center ml-auto">
-                        <input type="radio" name="shippingAddress" class="changeColor" id="shippingAddressOffice">
+                        <input type="radio" name="shippingAddress" class="changeColor" id="Office" data-id="6993 Meadow Vally Terra, PC 3637">
                     </div>
                 </label>
 
-                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="shippingAddressapartment">
+                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="Apartment">
                     <div class=" flex justify-center items-center bg-gray-300 rounded-full w-[60px] h-[60px]">
                         <div class="bg-black rounded-full w-[45px] h-[45px] p-3">
                             <img src="../../../../assets/svg/location.svg" alt="">
@@ -67,11 +67,11 @@
                         <p class="text-[14px] text-gray-500">21833 Clyde Gallagher, PC 4662</p>
                     </div>
                     <div class="flex items-center ml-auto">
-                        <input type="radio" name="shippingAddress" class="changeColor" id="shippingAddressapartment">
+                        <input type="radio" name="shippingAddress" class="changeColor" id="Apartment" data-id="21833 Clyde Gallagher, PC 4662">
                     </div>
                 </label>
 
-                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="shippingAddressParrentsHouse">
+                <label class="flex gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px] " for="ParrentsHouse">
                     <div class=" flex justify-center items-center bg-gray-300 rounded-full w-[60px] h-[60px]">
                         <div class="bg-black rounded-full w-[45px] h-[45px] p-3">
                             <img src="../../../../assets/svg/location.svg" alt="">
@@ -82,7 +82,7 @@
                         <p class="text-[14px] text-gray-500">5259 Blue Bill Park, PC 4627</p>
                     </div>
                     <div class="flex items-center ml-auto">
-                        <input type="radio" name="shippingAddress" class="changeColor" id="shippingAddressParrentsHouse">
+                        <input type="radio" name="shippingAddress" class="changeColor" id="ParrentsHouse" data-id="5259 Blue Bill Park, PC 4627">
                     </div>
                 </label>
               </div>
@@ -92,8 +92,8 @@
               </div>
 
               <div class="fixed bottom-0 p-5 left-0 right-0 bg-white border-t-[1px] shadow-inner rounded-t-[35px]">
-                <div class="bg-black p-5 w-full text-white rounded-full text-center">
-                    <h3>Confirm Payment</h3>
+                <div class="bg-black p-5 w-full text-white rounded-full text-center" id="apply">
+                    <h3>Apply</h3>
                 </div>
             </div>
             <script src="shippingAddress.js"></script>

@@ -133,7 +133,7 @@ let isPosting = false;
         )}catch (error) {
             console.error(`Error updating orders: ${error.message}`);
           }
-    }, 3000);
+    }, 180000);
 }
 
 homeBTN.addEventListener('click',()=>{

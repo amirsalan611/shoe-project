@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="flex flex-col py-3 fixed top-0 left-0 pt-5 w-full bg-white z-10">
-        <div class="flex justify-between w-full px-6">
+    <header class="flex flex-col py-3 fixed top-0 left-0 w-full bg-white z-10">
+        <div class="flex justify-between w-full pr-6 pl-4">
           <div class="flex items-center justify-items-center">
-            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" id="backArrow"/>
+            <img src="../../../../assets/svg/back-arrow.svg" alt="back button" id="backArrow" class="p-2"/>
             <h3 class="mx-6 pb-1 text-[22px] font-semibold">Choose Shipping</h3>
           </div>
         </div>
@@ -34,12 +34,12 @@
                             <h3>$10</h3>
                         </div>
                         <div class="flex items-center ml-auto w-[20px] ">
-                            <input type="radio" name="shippingAddress" class="changeColor" id="Economy">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Economy" data-id="10" value="../../../../assets/svg/delivered-box.svg">
                         </div>
                     </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="regular">
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="Regular">
                     <img src="../../../../assets/svg/delivery-package.svg" alt="" class="w-[45px]">
                     <div class="flex flex-col gap-1 justify-center">
                         <div class="flex items-center gap-2">
@@ -52,12 +52,12 @@
                             <h3>$15</h3>
                         </div>
                         <div class="flex items-center ml-auto w-[20px] ">
-                            <input type="radio" name="shippingAddress" class="changeColor" id="regular">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Regular" data-id="15" value="../../../../assets/svg/delivery-package.svg">
                         </div>
                     </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="cargo">
+                <label class="flex items-center gap-3 p-5 mt-0 mb-5 bg-white shadow-xl rounded-[30px]" for="Cargo">
                     <img src="../../../../assets/svg/cargo.svg" alt="" class="w-[50px]">
                     <div class="flex flex-col gap-1 justify-center">
                         <div class="flex items-center gap-2">
@@ -70,7 +70,7 @@
                             <h3>$20</h3>
                         </div>
                         <div class="flex items-center ml-auto w-[20px] ">
-                            <input type="radio" name="shippingAddress" class="changeColor" id="cargo">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Cargo" data-id="20" value="../../../../assets/svg/cargo.svg">
                         </div>
                     </div>
                 </label>
@@ -88,7 +88,7 @@
                             <h3>$30</h3>
                         </div>
                         <div class="flex items-center ml-auto w-[20px] ">
-                            <input type="radio" name="shippingAddress" class="changeColor" id="Express">
+                            <input type="radio" name="shippingAddress" class="changeColor" id="Express" data-id="30" value="../../../../assets/svg/express.svg">
                         </div>
                     </div>
                 </label>
@@ -96,7 +96,7 @@
               </div>
               
               <div class="fixed bottom-0 p-5 left-0 right-0 bg-white border-t-[1px] shadow-inner rounded-t-[35px]">
-                <div class="bg-black p-5 w-full text-white rounded-full text-center">
+                <div class="bg-black p-5 w-full text-white rounded-full text-center" id="apply">
                     <h3>Apply</h3>
                 </div>
             </div>
